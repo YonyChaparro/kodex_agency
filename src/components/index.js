@@ -1,0 +1,8 @@
+export { default as Navbar } from './Navbar'
+export { default as Hero } from './Hero'
+export { default as WhyKodex } from './WhyKodex'
+export { default as Pricing } from './Pricing'
+export { default as GlobalOps } from './GlobalOps'
+export { default as Footer } from './Footer'
+export { default as SmoothCursor } from './SmoothCursor'
+export { default as ScrollZoomSection } from './ScrollZoomSection'

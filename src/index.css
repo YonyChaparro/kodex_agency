@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-primary: #21d9ed;
+  --color-primary-dark: #0ea5b8;
+  --color-background-light: #f6f8f8;
+  --color-background-dark: #102022;
+  --color-slate-950: #020617;
+  --color-slate-900: #0f172a;
+  --color-slate-800: #1e293b;
+  --color-slate-700: #334155;
+  --color-slate-600: #475569;
+  --color-slate-500: #64748b;
+  --color-slate-400: #94a3b8;
+  --color-slate-300: #cbd5e1;
+  --color-slate-100: #f1f5f9;
+
+  /* Font Family */
+  --font-display: "Inter", sans-serif;
+}
+
+/* Custom utilities */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--font-display);
+    margin: 0;
+  }
+
+  /* Hide default cursor globally */
+  * {
+    cursor: none !important;
+  }
+
+  /* Show cursor on touch devices */
+  @media (hover: none) and (pointer: coarse) {
+    * {
+      cursor: auto !important;
+    }
+  }
+}
+
+/* Custom classes outside @layer to avoid @apply issues in Tailwind v4 */
+.glass-nav {
+  background: rgba(16, 32, 34, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(33, 217, 237, 0.3);
+}
+
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.bg-cyber-gradient {
+  background: linear-gradient(to right, #21d9ed, #7c3aed);
+}
+
+.text-cyber-gradient {
+  background: linear-gradient(to right, #21d9ed, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  color: white;
+  background-color: #21d9ed;
+  transition: all 0.2s;
+  transform: translateY(0);
+  box-shadow: 0 0 20px rgba(33, 217, 237, 0.4);
+}
+
+.btn-primary:hover {
+  background-color: #0ea5b8;
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(33, 217, 237, 0.6);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border: 1px solid #334155;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  color: #cbd5e1;
+  background-color: rgba(15, 23, 42, 0.5);
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
+}
+
+.btn-secondary:hover {
+  border-color: rgba(33, 217, 237, 0.5);
+  color: white;
+  background-color: #1e293b;
+}
+
+.btn-gradient {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.5rem;
+  border: 1px solid transparent;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  color: white;
+  background: linear-gradient(to right, #21d9ed, #7c3aed);
+  transition: opacity 0.2s;
+  box-shadow: 0 0 15px rgba(33, 217, 237, 0.3);
+}
+
+.btn-gradient:hover {
+  opacity: 0.9;
+}
