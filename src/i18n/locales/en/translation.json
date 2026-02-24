@@ -1,0 +1,12 @@
+{
+  "navbar": {
+    "servicios": "Services",
+    "proceso": "Process",
+    "proyectos": "Projects",
+    "precios": "Pricing",
+    "contacto": "Contact",
+    "blog": "Blog",
+    "cotizar_mobile": "Quote",
+    "cotizar_desktop": "Get a Quote"
+  }
+}
