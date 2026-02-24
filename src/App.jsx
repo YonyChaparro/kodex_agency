@@ -1,4 +1,4 @@
-import { Navbar, Hero, WhyKodex, Pricing, GlobalOps, Footer, SmoothCursor } from './components'
+import { Navbar, Hero, WhyKodex, Process, Pricing, Portfolio, Contact, Footer, SmoothCursor } from './components'
 
 function App() {
   return (
@@ -8,8 +8,10 @@ function App() {
       <main>
         <Hero />
         <WhyKodex />
+        <Process />
         <Pricing />
-        <GlobalOps />
+        <Portfolio />
+        <Contact />
       </main>
       <Footer />
     </div>

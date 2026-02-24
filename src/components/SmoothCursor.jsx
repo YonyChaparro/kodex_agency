@@ -1,30 +1,32 @@
 import { useEffect, useState } from 'react'
-import { motion, useSpring } from 'framer-motion'
+import { motion } from 'framer-motion'
+
+const isTouchDevice = () =>
+  typeof window !== 'undefined' &&
+  ('ontouchstart' in window || navigator.maxTouchPoints > 0)
 
 export default function SmoothCursor() {
   const [isVisible, setIsVisible] = useState(false)
   const [isPointer, setIsPointer] = useState(false)
+  const [pos, setPos] = useState({ x: 0, y: 0 })
 
-  const springConfig = { damping: 25, stiffness: 400, mass: 0.5 }
-  
-  const cursorX = useSpring(0, springConfig)
-  const cursorY = useSpring(0, springConfig)
+  // No renderizar en dispositivos táctiles
+  if (isTouchDevice()) return null
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      cursorX.set(e.clientX)
-      cursorY.set(e.clientY)
-      
+      setPos({ x: e.clientX, y: e.clientY })
+
       if (!isVisible) setIsVisible(true)
 
       const target = e.target
-      const isClickable = 
+      const isClickable =
         target.tagName === 'A' ||
         target.tagName === 'BUTTON' ||
         target.closest('a') ||
         target.closest('button') ||
         window.getComputedStyle(target).cursor === 'pointer'
-      
+
       setIsPointer(isClickable)
     }
 
@@ -40,18 +42,14 @@ export default function SmoothCursor() {
       document.documentElement.removeEventListener('mouseleave', handleMouseLeave)
       document.documentElement.removeEventListener('mouseenter', handleMouseEnter)
     }
-  }, [cursorX, cursorY, isVisible])
-
-  if (typeof window !== 'undefined' && 'ontouchstart' in window) {
-    return null
-  }
+  }, [])
 
   return (
     <motion.div
       className="fixed top-0 left-0 pointer-events-none z-[9999]"
       style={{
-        x: cursorX,
-        y: cursorY,
+        x: pos.x,
+        y: pos.y,
         translateX: '-50%',
         translateY: '-50%',
       }}
@@ -60,13 +58,13 @@ export default function SmoothCursor() {
         className="rounded-full bg-primary"
         animate={{
           opacity: isVisible ? 1 : 0,
-          width: isPointer ? 40 : 20,
-          height: isPointer ? 40 : 20,
+          width: isPointer ? 32 : 16,
+          height: isPointer ? 32 : 16,
         }}
         transition={{ 
           type: 'spring',
-          stiffness: 300,
-          damping: 20
+          stiffness: 400,
+          damping: 22
         }}
       />
     </motion.div>

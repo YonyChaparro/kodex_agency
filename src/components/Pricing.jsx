@@ -4,8 +4,9 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 const plans = [
   {
     name: 'Kodex Go',
-    price: '$250',
-    period: '/mes',
+    price: 'Desde $990.000',
+    period: '',
+
     description: 'Para emprendedores y MVPs.',
     features: [
       { text: 'Landing Page One-Page', included: true },
@@ -15,20 +16,22 @@ const plans = [
     ],
     cta: 'Iniciar Kodex Go',
     featured: false,
+    whatsappMsg: 'Hola! Me interesa el plan *Kodex Go* (desde $990.000). Me gustaría conocer más detalles y comenzar mi proyecto. ¿Podemos hablar?',
   },
   {
     name: 'Kodex Pro',
-    price: '$900',
-    period: '/mes',
+    price: 'Desde $1.990.000',
+    period: '',
     description: 'Para PYMES en crecimiento.',
     features: [
-      { text: 'Sitio Web Completo (5+ páginas)', included: true },
+      { text: 'Sitio Web Completo', included: true },
       { text: 'SEO Técnico Avanzado', included: true },
       { text: 'CMS Autoadministrable', included: true },
       { text: 'Soporte Prioritario 24/7', included: true },
     ],
     cta: 'Obtener Kodex Pro',
     featured: true,
+    whatsappMsg: 'Hola! Quiero el plan *Kodex Pro* (desde $1.990.000). Necesito un sitio web completo con SEO y CMS. ¿Cuándo podemos iniciar?',
   },
   {
     name: 'Enterprise',
@@ -43,6 +46,7 @@ const plans = [
     ],
     cta: 'Contactar Ventas',
     featured: false,
+    whatsappMsg: 'Hola! Estoy interesado en el plan *Enterprise* para un proyecto a medida (SaaS / plataforma compleja). ¿Podemos agendar una llamada para evaluar mi caso?',
   },
 ]
 
@@ -101,7 +105,9 @@ function PricingCard({ plan, index }) {
 
         <motion.a
           className="block w-full py-4 px-6 rounded-lg bg-cyber-gradient hover:opacity-90 transition-opacity text-center text-base font-bold text-white shadow-lg"
-          href="#contact"
+          href={`https://wa.me/573228237649?text=${encodeURIComponent(plan.whatsappMsg)}`}
+          target="_blank"
+          rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
@@ -154,7 +160,9 @@ function PricingCard({ plan, index }) {
 
       <motion.a
         className="block w-full py-3 px-4 rounded-lg border border-slate-700 hover:border-primary text-center text-sm font-semibold text-white hover:bg-primary/10 transition-colors"
-        href="#contact"
+        href={`https://wa.me/573228237649?text=${encodeURIComponent(plan.whatsappMsg)}`}
+        target="_blank"
+        rel="noopener noreferrer"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >

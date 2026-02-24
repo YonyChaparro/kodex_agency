@@ -27,7 +27,7 @@ const staggerContainer = {
 
 export default function Hero() {
   const containerRef = useRef(null)
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
@@ -41,31 +41,31 @@ export default function Hero() {
   const backgroundOpacity = useTransform(scrollYProgress, [0, 0.5], [0.1, 0.3])
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-background-dark z-[-2]"></div>
       <div className="absolute inset-0 bg-grid-pattern z-[-1]"></div>
-      <motion.div 
+      <motion.div
         className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary rounded-full blur-[100px] z-[-1]"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 0.1 }}
         transition={{ duration: 1.5, ease: 'easeOut' }}
-        style={{ 
+        style={{
           scale: backgroundScale,
           opacity: backgroundOpacity
         }}
       />
 
       {/* Scroll Zoom Container */}
-      <motion.div 
+      <motion.div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
         style={{ scale, opacity, y }}
       >
         {/* Badge */}
-        <motion.div 
+        <motion.div
           className="inline-flex items-center px-3 py-1 rounded-full border border-primary/20 bg-primary/10 text-primary text-xs font-semibold tracking-wide mb-8"
           variants={fadeInUp}
           initial="hidden"
@@ -77,7 +77,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Main Heading */}
-        <motion.h1 
+        <motion.h1
           className="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight glow-text"
           variants={fadeInUp}
           initial="hidden"
@@ -89,7 +89,7 @@ export default function Hero() {
         </motion.h1>
 
         {/* Subtitle */}
-        <motion.p 
+        <motion.p
           className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-slate-400 font-light mb-10"
           variants={fadeInUp}
           initial="hidden"
@@ -101,34 +101,34 @@ export default function Hero() {
         </motion.p>
 
         {/* CTA Buttons */}
-        <motion.div 
+        <motion.div
           className="flex flex-col sm:flex-row justify-center gap-4 mb-16"
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
           custom={3}
         >
-          <motion.a 
-            className="btn-primary" 
+          <motion.a
+            className="btn-primary"
             href="#precios"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Ver Planes
+            VER PLANES
             <span className="material-icons ml-2 text-lg">arrow_forward</span>
           </motion.a>
-          <motion.a 
-            className="btn-secondary" 
+          <motion.a
+            className="btn-secondary"
             href="#portfolio"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Ver Portafolio
+            VER CASOS DE ÉXITO
           </motion.a>
         </motion.div>
 
         {/* Tech Stack Strip */}
-        <motion.div 
+        <motion.div
           className="border-t border-slate-800 pt-10 mt-10"
           variants={fadeInUp}
           initial="hidden"
@@ -138,15 +138,15 @@ export default function Hero() {
           <p className="text-sm text-slate-500 uppercase tracking-widest mb-6 font-semibold">
             Desarrollamos con tecnología de punta
           </p>
-          <motion.div 
+          <motion.div
             className="flex flex-wrap justify-center gap-8 md:gap-16"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
           >
             {techStack.map((tech, i) => (
-              <motion.div 
-                key={tech.name} 
+              <motion.div
+                key={tech.name}
                 className="flex items-center gap-2 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500"
                 variants={fadeInUp}
                 custom={i}
@@ -166,7 +166,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Scroll Indicator */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -179,7 +179,7 @@ export default function Hero() {
           animate={{ y: [0, 5, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
         >
-          <motion.div 
+          <motion.div
             className="w-1.5 h-1.5 bg-primary rounded-full"
             animate={{ y: [0, 12, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
