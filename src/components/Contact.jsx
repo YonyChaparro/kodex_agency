@@ -116,7 +116,7 @@ export default function Contact() {
               ))}
 
               <motion.a
-                href="https://wa.me/573228237649"
+                href="https://wa.me/573227619848"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-whatsapp inline-flex items-center gap-3 w-full justify-center py-4 text-base"

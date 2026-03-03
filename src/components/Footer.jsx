@@ -85,7 +85,7 @@ export default function Footer() {
         </motion.p>
         <motion.a
           className="btn-whatsapp mb-16 text-lg px-8 py-5 gap-4"
-          href="https://wa.me/573228237649"
+          href="https://wa.me/573227619848"
           target="_blank"
           rel="noopener noreferrer"
           variants={fadeInUp}

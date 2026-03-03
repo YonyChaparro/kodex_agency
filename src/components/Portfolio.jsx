@@ -223,7 +223,7 @@ export default function Portfolio() {
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           <motion.a
-            href="https://wa.me/573228237649"
+            href="https://wa.me/573227619848"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp inline-flex items-center gap-3 text-sm px-6 py-3"

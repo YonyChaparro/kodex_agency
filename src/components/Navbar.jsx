@@ -148,7 +148,7 @@ const MobileDrawer = ({ onClose, t, i18n }) =>
         {/* CTA WhatsApp */}
         <div className="px-6 pb-8 pt-4 border-t border-white/[0.07]">
           <motion.a
-            href="https://wa.me/573228237649"
+            href="https://wa.me/573227619848"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp w-full flex items-center justify-center gap-2"
@@ -261,7 +261,7 @@ export default function Navbar() {
           {/* CTA Button Desktop */}
           <motion.a
             className="btn-whatsapp inline-flex items-center gap-2 text-xs sm:text-sm px-3 py-2 sm:px-5 sm:py-2.5 shrink-0"
-            href="https://wa.me/573228237649"
+            href="https://wa.me/573227619848"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.8 }}

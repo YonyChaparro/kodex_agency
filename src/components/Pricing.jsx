@@ -105,7 +105,7 @@ function PricingCard({ plan, index }) {
 
         <motion.a
           className="block w-full py-4 px-6 rounded-lg bg-cyber-gradient hover:opacity-90 transition-opacity text-center text-base font-bold text-white shadow-lg"
-          href={`https://wa.me/573228237649?text=${encodeURIComponent(plan.whatsappMsg)}`}
+          href={`https://wa.me/573227619848?text=${encodeURIComponent(plan.whatsappMsg)}`}
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
@@ -160,7 +160,7 @@ function PricingCard({ plan, index }) {
 
       <motion.a
         className="block w-full py-3 px-4 rounded-lg border border-slate-700 hover:border-primary text-center text-sm font-semibold text-white hover:bg-primary/10 transition-colors"
-        href={`https://wa.me/573228237649?text=${encodeURIComponent(plan.whatsappMsg)}`}
+        href={`https://wa.me/573227619848?text=${encodeURIComponent(plan.whatsappMsg)}`}
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.02 }}
