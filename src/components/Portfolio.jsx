@@ -24,7 +24,7 @@ const projects = [
     description: 'Sitio web para empresa de instalación de cargadores para vehículos eléctricos en Bogotá y La Sabana, con galería de proyectos y formulario de cotización.',
     tags: ['HTML', 'CSS', 'JavaScript'],
     color: '#10b981',
-    url: 'https://yonychaparro.github.io/PROPUESTA-KINEC-ENERGY/',
+    url: 'https://kineticenergysoluciones.com/',
     thumbnail: kinecImg,
     scrollPreview: true,
   },
